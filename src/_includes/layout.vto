@@ -46,31 +46,44 @@
           </svg>
         </button>
         <div id="search" class="search"></div>
-        <script>
-          let theme = localStorage.getItem("theme") ||
-            (window.matchMedia("(prefers-color-scheme: dark)")
-                .matches
-              ? "dark"
-              : "light");
-          document.documentElement.dataset.theme = theme;
-          function changeTheme() {
-            theme = theme === "dark" ? "light" : "dark";
-            localStorage.setItem("theme", theme);
-            document.documentElement.dataset.theme = theme;
-          }
-        </script>
-        <button
+        <label
+          for="toggle-theme"
+          class="button theme"
           aria-label="Toogle to dark/light theme"
-          class="button theme withscript"
-          onclick="changeTheme()"
         >
+          <input
+            id="toggle-theme" type="checkbox"
+            onclick="changeTheme()"
+          />
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
             <path
               fill-rule="evenodd"
               d="M10 0c5.523 0 10 4.477 10 10s-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0Zm9 10a9 9 0 0 1-9 9V1a9 9 0 0 1 9 9Z"
             />
           </svg>
-        </button>
+        </label>
+        <script>
+          const toggleTheme = document.querySelector("#toggle-theme");
+          let theme = localStorage.getItem("theme") ||
+            (window.matchMedia("(prefers-color-scheme: dark)")
+                .matches
+              ? "dark"
+              : "light");
+          if (theme == "dark") {
+            toggleTheme.checked = true;
+          } else {
+            toggleTheme.checked = false;
+          }
+          function changeTheme() {
+            theme = theme === "dark" ? "light" : "dark";
+            localStorage.setItem("theme", theme);
+            if (theme == "dark") {
+              toggleTheme.checked = true;
+            } else {
+              toggleTheme.checked = false;
+            }
+          }
+        </script>
       </div>
 
       {{ include "templates/menu.vto" }}

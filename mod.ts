@@ -10,6 +10,7 @@ export default function (options?: Options) {
 
     // Add remote files
     const files = [
+      "_includes/css/ds.css",
       "_includes/css/menu.css",
       "_includes/css/updates.css",
       "_includes/css/copy-code-button.css",
