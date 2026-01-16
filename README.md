@@ -5,6 +5,10 @@
 - Use markdown to save the pages
 - Instant search engine.
 
+## Changes in this fork
+
+- Dark theme is available even when JavaScript is disabled
+
 ## Install as remote theme
 
 The **fastest and easiest** way to use this theme is by importing it as a remote
@@ -14,7 +18,7 @@ your `_config.ts` file:
 
 ```ts
 import lume from "lume/mod.ts";
-import wiki from "https://deno.land/x/lume_theme_simple_wiki@v0.1.0/mod.ts";
+import wiki from "https://raw.githubusercontent.com/Totto66/theme-simple-wiki/refs/heads/main/mod.ts";
 
 const site = lume();
 
@@ -80,7 +84,8 @@ repo: [https://github.com/me/therepo](https://github.com/me/therepo)
 
 You can also edit the above settings via [lume cms](https://lume.land/cms/) (run
 `deno task lume cms`), which is now included with simple-wiki. See the
-[relevant config section](https://github.com/lumeland/theme-simple-wiki/blob/main/_cms.ts#L18-L60)
+[relevant config section](https://github.com/Totto66/theme-simple-wiki/blob/main/_cms.ts#L18-L60)
+
 in the wiki's `_cms.ts`.
 
 ### In Markdown Content
@@ -121,6 +126,7 @@ Lorem ipsum...
 
 ## Credit
 
-This theme uses [phosphor icons](https://phosphoricons.com), which are licensed
-under the
+This theme is forked from
+[theme-simple-wiki](https://github.com/lumeland/theme-simple-wiki),
+which uses [phosphor icons](https://phosphoricons.com), which are licensed under the
 [MIT License](https://raw.githubusercontent.com/phosphor-icons/homepage/master/LICENSE).
