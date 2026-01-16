@@ -17,6 +17,7 @@
     >
 
     <link rel="stylesheet" href="/styles.css">
+	<noscript><style> .withscript { display: none !important } </style></noscript>
     <script type="module" src="/menu.js"></script>
     <script type="module" src="/copy-code-button.js"></script>
     <link rel="canonical" href="{{ url |> url(true) }}">
@@ -28,7 +29,7 @@
       <div class="toolbar">
         <button
           aria-label="Menu"
-          class="menu-button button is-primary"
+          class="menu-button button is-primary withscript"
           type="button"
           id="menu-button"
         >
@@ -60,7 +61,7 @@
         </script>
         <button
           aria-label="Toogle to dark/light theme"
-          class="button theme"
+          class="button theme withscript"
           onclick="changeTheme()"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
